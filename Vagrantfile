@@ -21,5 +21,15 @@ Vagrant.configure("2") do |config|
     conf.vm.synced_folder ".",
       "/vagrant",
       mount_options: ["dmode=775", "fmode=664"]
+
+    directory = './resources/vagrant/centos'
+    Dir.entries("#{directory}").select {
+      |dir| File.directory? File.join(directory, dir) and ! (dir =='.' || dir == '..')
+    }.sort.each{
+      |d|
+        split_d = d.split('-')
+        priv = split_d[-1] == 'priv' ? true : false
+        conf.vm.provision "shell", privileged: priv, path: "#{directory}/#{d}/main.sh"
+    }
   end
 end
