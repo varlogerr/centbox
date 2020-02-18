@@ -3,6 +3,7 @@
 image=mariadb:10.4
 container=mariadb104
 password=Secret123#
+host_port=33061
 
 [[ "$(
   docker container ls \
@@ -18,4 +19,4 @@ docker container run \
   -v "${container}":/var/lib/mysql \
   --restart always \
   -e MYSQL_ROOT_PASSWORD="${password}" \
-  -p 33061:3306 "${image}"
+  -p ${host_port}:3306 "${image}"
