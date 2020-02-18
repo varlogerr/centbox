@@ -30,6 +30,7 @@ Copy `vagrant.demo.json` to `vagrant.json` and change values to desired ones (or
 * direnv
 * docker
 * git
+* htop
 * MariaDB 10.4 (started as a docker container)
 * MySQL client
 * PHP 7.3
@@ -38,7 +39,7 @@ Copy `vagrant.demo.json` to `vagrant.json` and change values to desired ones (or
 
 ### Note on MySQL server
 The exposed port is 33061.  
-Accounts (all granted all privileges):
+Accounts (in `user`:`password` format, all granted all privileges):
 * `root`:`vagrant`
 * `vagrant`:`vagrant`
 * `kurdupel`:`Secret123#`
