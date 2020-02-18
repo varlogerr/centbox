@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
 
     directory = './resources/vagrant/centos'
     Dir.entries("#{directory}").select {
-      |dir| File.directory? File.join(directory, dir) and ! (dir =='.' || dir == '..')
+      |dir| File.directory? File.join(directory, dir) and ! (dir =='.' || dir == '..' || dir == 'resources')
     }.sort.each{
       |d|
         split_d = d.split('-')

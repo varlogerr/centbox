@@ -15,9 +15,6 @@ yum install -y \
 systemctl start docker
 systemctl enable docker
 
-# add vagrant user to docker group
-usermod -aG docker vagrant
-
 # install completion
 curl \
   https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker \

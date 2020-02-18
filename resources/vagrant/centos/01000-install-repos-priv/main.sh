@@ -11,7 +11,7 @@ yum -y install \
   https://repo.ius.io/ius-release-el${CENTOS_V}.rpm
 
 # install mariadb repo
-cat /vagrant/resources/vagrant/centos/020-install-repos-priv/resources/mariadb.repo \
+cat /vagrant/resources/vagrant/centos/resources/mariadb/mariadb.repo \
 | sed -e "s#{{ MARIADB_V }}#${MARIADB_V}#" \
 | sed -e "s#{{ CENTOS_V }}#${CENTOS_V}#" \
 | tee /etc/yum.repos.d/mariadb.repo
