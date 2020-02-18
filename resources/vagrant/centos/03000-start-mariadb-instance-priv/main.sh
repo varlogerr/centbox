@@ -2,7 +2,7 @@
 
 image=mariadb:10.4
 container=mariadb104
-password=Secret123#
+root_password=vagrant
 host_port=33061
 
 [[ "$(
@@ -18,5 +18,7 @@ docker container run \
   -d --name "${container}" \
   -v "${container}":/var/lib/mysql \
   --restart always \
-  -e MYSQL_ROOT_PASSWORD="${password}" \
+  -v /vagrant/resources/vagrant/centos/resources/mariadb/confd:/etc/mysql/conf.d \
+  -v /vagrant/resources/vagrant/centos/resources/mariadb/initdb:/docker-entrypoint-initdb.d \
+  -e MYSQL_ROOT_PASSWORD="${root_password}" \
   -p ${host_port}:3306 "${image}"
