@@ -23,14 +23,15 @@ The box is limited with only 1024M of RAM and 1 CPU. In some cases you'll want t
 The shared folder (`/vagrant` inside centbox) is mounted as vboxfs file system. `chmod` and `chown` won't have any effect inside this directory. So if you want for example to make a file executable move / copy it to somewhere else inside the virtual machine and make it executable (for example to `/home/vagrant` directory).
 
 ### Included tools
-* vim
-* git
+* Apache server 2.4
+* direnv
 * docker
-* Apache server
-* PHP 7.3
-* MySQL client
-* tmux
+* git
 * MariaDB 10.4 (started as a docker container)
+* MySQL client
+* PHP 7.3
+* tmux
+* vim
 
 ### Note on MySQL server
 root password is `Secret123#`, the exposed port is 33061
