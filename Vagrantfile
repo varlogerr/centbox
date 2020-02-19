@@ -20,15 +20,15 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "centbox", primary: true do |conf|
-    config.vm.box = "bento/centos-7"
+    conf.vm.box = "bento/centos-7"
     conf.vm.box_version = "202002.04.0"
     conf.vm.hostname = "CentBox"
-    conf.vm.network "private_network", ip: vm_conf[:ip]
+    conf.vm.network "private_network", ip: vm_conf["ip"]
 
     conf.vm.provider "virtualbox" do |v|
       v.gui = false
-      v.memory = vm_conf[:memory]
-      v.cpus = vm_conf[:cpus]
+      v.memory = vm_conf["memory"]
+      v.cpus = vm_conf["cpus"]
     end
 
     # configure vagrant synced directory
